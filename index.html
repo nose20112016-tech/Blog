@@ -2,9 +2,1248 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Bitácora Antimosquitos</title>
-    </body>
+<title>Bitácora Antimosquitos</title>
+
+<style>
+
+/* =========================
+   CONFIGURACIÓN GENERAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #082741;
+    color: white;
+}
+
+:root {
+    --azul: #082741;
+    --azul-oscuro: #061c30;
+    --azul-claro: #405b73;
+    --dorado: #e3a72f;
+    --verde: #286143;
+    --blanco: #ffffff;
+}
+
+
+/* =========================
+   NAVEGACIÓN
+========================= */
+
+header {
+    width: 100%;
+    background: #082741;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+
+    border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.navbar {
+    max-width: 1400px;
+    margin: auto;
+
+    min-height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 30px;
+}
+
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    font-size: 19px;
+    font-weight: bold;
+
+    white-space: nowrap;
+}
+
+.logo {
+    width: 32px;
+    height: 32px;
+
+    border: 2px solid var(--dorado);
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--dorado);
+}
+
+.menu {
+    list-style: none;
+
+    display: flex;
+    align-items: center;
+
+    gap: 27px;
+}
+
+.menu a {
+    color: #dddddd;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: var(--dorado);
+}
+
+
+/* =========================
+   PORTADA
+========================= */
+
+.hero {
+    position: relative;
+
+    min-height: calc(100vh - 70px);
+
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+
+    padding: 30px 20px 80px;
+}
+
+.hero-contenido {
+    width: 100%;
+    max-width: 1000px;
+
+    position: relative;
+    z-index: 10;
+
+    text-align: center;
+}
+
+
+/* =========================
+   INSTITUCIÓN
+========================= */
+
+.institucion {
+    color: #d0d0d0;
+
+    font-size: 18px;
+
+    line-height: 1.6;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   TÍTULO
+========================= */
+
+.titulo {
+    font-size: clamp(43px, 5vw, 68px);
+
+    line-height: 1.15;
+
+    font-weight: 800;
+
+    max-width: 850px;
+
+    margin: 0 auto 40px;
+}
+
+
+/* =========================
+   CÍRCULOS DECORATIVOS
+========================= */
+
+.circulo {
+    position: absolute;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    border: 2px solid rgba(227,167,47,.18);
+
+    pointer-events: none;
+}
+
+.circulo1 {
+    width: 680px;
+    height: 680px;
+    top: 135px;
+}
+
+.circulo2 {
+    width: 540px;
+    height: 540px;
+    top: 205px;
+}
+
+.circulo3 {
+    width: 400px;
+    height: 400px;
+    top: 275px;
+}
+
+.circulo4 {
+    width: 260px;
+    height: 260px;
+    top: 345px;
+}
+
+
+/* =========================
+   ESCUDO
+========================= */
+
+.escudo {
+    position: absolute;
+
+    z-index: -1;
+
+    top: 135px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 260px;
+    height: 470px;
+
+    background: rgba(40,97,67,.82);
+
+    border: 4px solid rgba(227,167,47,.8);
+
+    clip-path: polygon(
+        50% 0%,
+        100% 10%,
+        100% 60%,
+        94% 72%,
+        82% 84%,
+        65% 94%,
+        50% 100%,
+        35% 94%,
+        18% 84%,
+        6% 72%,
+        0% 60%,
+        0% 10%
+    );
+}
+
+
+/* =========================
+   GOTA
+========================= */
+
+.gota {
+    position: absolute;
+
+    top: 115px;
+    left: 50%;
+
+    transform: translateX(-50%) rotate(45deg);
+
+    width: 95px;
+    height: 95px;
+
+    background: rgba(255,255,255,.9);
+
+    border-radius: 60% 0 60% 60%;
+}
+
+.mosquito {
+    position: absolute;
+
+    top: 167px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    color: var(--azul);
+
+    font-size: 42px;
+}
+
+
+/* =========================
+   DESCRIPCIÓN
+========================= */
+
+.descripcion {
+    max-width: 750px;
+
+    margin: 0 auto 45px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 24px;
+
+    line-height: 1.55;
+
+    color: #e5e0d8;
+
+    position: relative;
+    z-index: 20;
+}
+
+
+/* =========================
+   PANEL DE DATOS
+========================= */
+
+.panel {
+    position: relative;
+
+    z-index: 50;
+
+    max-width: 980px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    background: rgba(65,89,111,.92);
+
+    border: 1px solid rgba(255,255,255,.15);
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    text-align: left;
+
+    box-shadow: 0 15px 35px rgba(0,0,0,.15);
+}
+
+.dato {
+    min-height: 140px;
+
+    padding: 25px;
+
+    border-right: 1px solid rgba(0,0,0,.15);
+}
+
+.dato h3,
+.fecha h3 {
+    color: var(--dorado);
+
+    font-size: 15px;
+
+    font-weight: normal;
+
+    margin-bottom: 17px;
+}
+
+.dato p,
+.fecha p {
+    font-family: Georgia, serif;
+
+    font-size: 18px;
+
+    font-style: italic;
+
+    font-weight: bold;
+
+    line-height: 1.6;
+
+    color: white;
+}
+
+.fecha {
+    grid-column: 1 / 4;
+
+    padding: 24px;
+
+    min-height: 105px;
+
+    background: rgba(17,47,71,.35);
+}
+
+
+/* =========================
+   SECCIONES
+========================= */
+
+.seccion {
+    min-height: 550px;
+
+    padding: 100px 25px;
+
+    background: #f4f4f4;
+
+    color: #333;
+
+    scroll-margin-top: 70px;
+}
+
+.seccion:nth-of-type(even) {
+    background: white;
+}
+
+.contenido {
+    max-width: 1050px;
+
+    margin: auto;
+}
+
+.seccion h2 {
+    color: var(--azul);
+
+    font-size: 42px;
+
+    margin-bottom: 25px;
+}
+
+.seccion h2::after {
+    content: "";
+
+    display: block;
+
+    width: 75px;
+    height: 4px;
+
+    background: var(--dorado);
+
+    margin-top: 12px;
+}
+
+.seccion > .contenido > p {
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    color: #555;
+
+    max-width: 900px;
+}
+
+
+/* =========================
+   TARJETAS
+========================= */
+
+.tarjetas {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+    margin-top: 40px;
+}
+
+.tarjeta {
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 14px;
+
+    border-top: 4px solid var(--dorado);
+
+    box-shadow: 0 5px 20px rgba(0,0,0,.1);
+
+    transition: .3s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 10px 30px rgba(0,0,0,.15);
+}
+
+.tarjeta h3 {
+    color: var(--verde);
+
+    margin-bottom: 18px;
+
+    font-size: 21px;
+}
+
+.tarjeta p {
+    color: #555;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   LISTA DE MATERIALES
+========================= */
+
+.lista-materiales {
+    list-style: none;
+
+    margin-top: 15px;
+}
+
+.lista-materiales li {
+    position: relative;
+
+    color: #555;
+
+    line-height: 1.6;
+
+    padding: 9px 0 9px 22px;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+.lista-materiales li:last-child {
+    border-bottom: none;
+}
+
+.lista-materiales li::before {
+    content: "•";
+
+    position: absolute;
+
+    left: 2px;
+
+    top: 4px;
+
+    color: var(--dorado);
+
+    font-size: 22px;
+}
+
+
+/* =========================
+   PIE DE PÁGINA
+========================= */
+
+footer {
+    background: var(--azul-oscuro);
+
+    text-align: center;
+
+    padding: 35px 20px;
+
+    color: #ccc;
+
+    line-height: 1.8;
+}
+
+footer strong {
+    color: var(--dorado);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+
+    .navbar {
+        flex-direction: column;
+
+        gap: 18px;
+
+        padding: 20px;
+    }
+
+    .menu {
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 15px;
+    }
+
+    .panel {
+        grid-template-columns: 1fr;
+    }
+
+    .dato {
+        border-right: none;
+
+        border-bottom: 1px solid rgba(0,0,0,.15);
+    }
+
+    .fecha {
+        grid-column: auto;
+    }
+
+    .tarjetas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .titulo {
+        font-size: 38px;
+    }
+
+    .descripcion {
+        font-size: 20px;
+    }
+
+    .institucion {
+        font-size: 15px;
+    }
+
+    .tarjetas {
+        grid-template-columns: 1fr;
+    }
+
+    .seccion h2 {
+        font-size: 34px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     MENÚ
+========================= -->
+
+<header>
+
+<nav class="navbar">
+
+    <div class="marca">
+
+        <div class="logo">◇</div>
+
+        <span>Bitácora Antimosquitos</span>
+
+    </div>
+
+
+    <ul class="menu">
+
+        <li>
+            <a href="#presentacion">Presentación</a>
+        </li>
+
+        <li>
+            <a href="#investigacion">Investigación</a>
+        </li>
+
+        <li>
+            <a href="#materiales">Materiales</a>
+        </li>
+
+        <li>
+            <a href="#evidencias">Evidencias</a>
+        </li>
+
+        <li>
+            <a href="#producto">Producto</a>
+        </li>
+
+        <li>
+            <a href="#opinion">Opinión</a>
+        </li>
+
+        <li>
+            <a href="#conclusiones">Conclusiones</a>
+        </li>
+
+        <li>
+            <a href="#fuentes">Fuentes</a>
+        </li>
+
+    </ul>
+
+</nav>
+
+</header>
+
+
+
+<main>
+
+
+<!-- =========================
+     PRESENTACIÓN
+========================= -->
+
+<section class="hero" id="presentacion">
+
+
+    <!-- CÍRCULOS -->
+
+    <div class="circulo circulo1"></div>
+
+    <div class="circulo circulo2"></div>
+
+    <div class="circulo circulo3"></div>
+
+    <div class="circulo circulo4"></div>
+
+
+
+    <div class="hero-contenido">
+
+
+        <!-- INSTITUCIÓN -->
+
+        <div class="institucion">
+
+            Unidad Educativa de las Fuerzas Armadas
+
+            <br>
+
+            Liceo Naval de Guayaquil
+
+            <br>
+
+            «Cmdte. Rafael Andrade Lalama»
+
+        </div>
+
+
+
+        <!-- TÍTULO -->
+
+        <h1 class="titulo">
+
+            Uso adecuado del
+
+            <br>
+
+            repelente para mosquitos
+
+        </h1>
+
+
+
+        <!-- ESCUDO -->
+
+        <div class="escudo">
+
+            <div class="gota"></div>
+
+            <div class="mosquito">
+                ✣
+            </div>
+
+        </div>
+
+
+
+        <!-- DESCRIPCIÓN -->
+
+        <p class="descripcion">
+
+            Proyecto de investigación realizado por estudiantes de
+
+            <br>
+
+            Primero de Bachillerato General Unificado (1.º BGU)
+
+        </p>
+
+
+
+        <!-- DATOS -->
+
+        <div class="panel">
+
+
+            <div class="dato">
+
+                <h3>Estudiante participante</h3>
+
+                <p>
+                    Toledo Nicolas
+                </p>
+
+            </div>
+
+
+
+            <div class="dato">
+
+                <h3>Curso y paralelo</h3>
+
+                <p>
+                    1ro Delta
+                </p>
+
+            </div>
+
+
+
+            <div class="dato">
+
+                <h3>Docentes responsables</h3>
+
+                <p>
+                    Genesis Rivera
+                    <br>
+                    Ricardo Jimenez
+                </p>
+
+            </div>
+
+
+
+            <div class="fecha">
+
+                <h3>Fecha de realización</h3>
+
+                <p>
+                    22 de septiembre de 2026
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     INVESTIGACIÓN
+========================= -->
+
+<section class="seccion" id="investigacion">
+
+<div class="contenido">
+
+
+    <h2>Investigación</h2>
+
+
+    <p>
+
+        Los mosquitos son insectos capaces de transmitir
+        diferentes enfermedades. Por esta razón, la prevención
+        de sus picaduras constituye una medida importante para
+        proteger la salud. El uso adecuado de repelentes ayuda
+        a disminuir el contacto entre los mosquitos y las personas.
+
+    </p>
+
+
+
+    <div class="tarjetas">
+
+
+        <div class="tarjeta">
+
+            <h3>¿Qué es un repelente?</h3>
+
+            <p>
+
+                Es un producto utilizado para disminuir la
+                posibilidad de que determinados insectos se
+                acerquen y piquen a una persona.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="tarjeta">
+
+            <h3>¿Por qué utilizarlo?</h3>
+
+            <p>
+
+                Los repelentes forman parte de las medidas
+                personales utilizadas para prevenir las
+                picaduras de mosquitos.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="tarjeta">
+
+            <h3>Prevención</h3>
+
+            <p>
+
+                Además del repelente, es importante evitar
+                acumulaciones de agua y mantener limpios los
+                espacios donde pueden reproducirse los mosquitos.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     MATERIALES
+========================= -->
+
+<section class="seccion" id="materiales">
+
+<div class="contenido">
+
+
+    <h2>Materiales</h2>
+
+
+    <p>
+
+        Para el desarrollo del proyecto se utilizaron materiales
+        vegetales, sustancias, instrumentos de laboratorio,
+        elementos para el envasado y equipos de protección personal.
+
+    </p>
+
+
+
+    <div class="tarjetas">
+
+
+        <!-- MATERIAL VEGETAL -->
+
+        <div class="tarjeta">
+
+            <h3>🌿 Material vegetal</h3>
+
+            <ul class="lista-materiales">
+
+                <li>
+                    5 g de la planta A.
+                </li>
+
+                <li>
+                    5 g de la planta B.
+                </li>
+
+            </ul>
+
+        </div>
+
+
+
+        <!-- SUSTANCIAS -->
+
+        <div class="tarjeta">
+
+            <h3>🧪 Sustancias</h3>
+
+            <ul class="lista-materiales">
+
+                <li>
+                    50 mL de alcohol antiséptico al 70 %
+                    a base de etanol.
+                </li>
+
+                <li>
+                    Agua destilada para lavado de material.
+                </li>
+
+            </ul>
+
+        </div>
+
+
+
+        <!-- LABORATORIO -->
+
+        <div class="tarjeta">
+
+            <h3>⚗️ Material de laboratorio</h3>
+
+            <ul class="lista-materiales">
+
+                <li>Mortero y pistilo.</li>
+
+                <li>Balanza.</li>
+
+                <li>Probeta de 50 o 100 mL.</li>
+
+                <li>2 vasos de precipitación.</li>
+
+                <li>Embudo.</li>
+
+                <li>Papel filtro.</li>
+
+                <li>Varilla de agitación.</li>
+
+            </ul>
+
+        </div>
+
+
+
+        <!-- ENVASADO -->
+
+        <div class="tarjeta">
+
+            <h3>🧴 Envasado y medición</h3>
+
+            <ul class="lista-materiales">
+
+                <li>
+                    Frasco pequeño con atomizador.
+                </li>
+
+                <li>
+                    Gotero o pipeta.
+                </li>
+
+                <li>
+                    Etiquetas.
+                </li>
+
+                <li>
+                    Marcador.
+                </li>
+
+                <li>
+                    Cronómetro.
+                </li>
+
+            </ul>
+
+        </div>
+
+
+
+        <!-- PROTECCIÓN -->
+
+        <div class="tarjeta">
+
+            <h3>🥼 Protección personal</h3>
+
+            <ul class="lista-materiales">
+
+                <li>
+                    Guantes.
+                </li>
+
+                <li>
+                    Mascarilla.
+                </li>
+
+                <li>
+                    Cofia.
+                </li>
+
+                <li>
+                    Mandil.
+                </li>
+
+            </ul>
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     EVIDENCIAS
+========================= -->
+
+<section class="seccion" id="evidencias">
+
+<div class="contenido">
+
+    <h2>Evidencias</h2>
+
+    <p>
+
+        En este espacio se incorporarán fotografías,
+        registros e imágenes obtenidas durante el desarrollo
+        del proyecto de investigación.
+
+    </p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     PRODUCTO
+========================= -->
+
+<section class="seccion" id="producto">
+
+<div class="contenido">
+
+    <h2>Producto</h2>
+
+    <p>
+
+        En esta sección se presentará el producto elaborado
+        como resultado del proyecto sobre el uso adecuado
+        del repelente para mosquitos.
+
+    </p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     OPINIÓN
+========================= -->
+
+<section class="seccion" id="opinion">
+
+<div class="contenido">
+
+    <h2>Opinión</h2>
+
+    <p>
+
+        Este proyecto permite comprender la importancia de
+        prevenir las picaduras de mosquitos y utilizar
+        correctamente las diferentes medidas de protección.
+
+    </p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     CONCLUSIONES
+========================= -->
+
+<section class="seccion" id="conclusiones">
+
+<div class="contenido">
+
+    <h2>Conclusiones</h2>
+
+    <p>
+
+        El uso adecuado del repelente constituye una medida
+        de protección frente a las picaduras de mosquitos.
+        Esta práctica debe complementarse con medidas
+        ambientales destinadas a disminuir los lugares donde
+        los mosquitos pueden reproducirse.
+
+    </p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     FUENTES
+========================= -->
+
+<section class="seccion" id="fuentes">
+
+<div class="contenido">
+
+    <h2>Fuentes</h2>
+
+    <p>
+
+        En esta sección se colocarán las referencias
+        bibliográficas, artículos científicos y páginas
+        institucionales utilizadas para desarrollar el proyecto.
+
+    </p>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================
+     PIE DE PÁGINA
+========================= -->
+
+<footer>
+
+    <strong>
+        Bitácora Antimosquitos
+    </strong>
+
+    <br>
+
+    Toledo Nicolas — 1ro Delta
+
+    <br>
+
+    Docentes: Genesis Rivera y Ricardo Jimenez
+
+    <br>
+
+    22 de septiembre de 2026
+
+</footer>
+
+
+</body>
+
 </html>
