@@ -626,6 +626,13 @@ footer strong {
 
 }
 
+
+/* Galería de evidencias */
+.galeria-evidencias {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:32px}
+.foto-evidencia {background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 5px 20px rgba(0,0,0,.1);border-top:4px solid var(--dorado)}
+.foto-evidencia img {display:block;width:100%;height:330px;object-fit:cover}
+.foto-evidencia figcaption {padding:15px 18px;color:#405064;font-size:15px;line-height:1.5}
+@media(max-width:650px){.galeria-evidencias{grid-template-columns:1fr}.foto-evidencia img{height:auto}}
 </style>
 
 </head>
@@ -1100,21 +1107,16 @@ footer strong {
 ========================= -->
 
 <section class="seccion" id="evidencias">
-
 <div class="contenido">
-
-    <h2>Evidencias</h2>
-
-    <p>
-
-        En este espacio se incorporarán fotografías,
-        registros e imágenes obtenidas durante el desarrollo
-        del proyecto de investigación.
-
-    </p>
-
+<h2>Evidencias</h2>
+<p>Registro fotográfico de las actividades realizadas en el laboratorio durante el desarrollo del proyecto de investigación sobre repelentes para mosquitos.</p>
+<div class="galeria-evidencias">
+<figure class="foto-evidencia"><img src="evidencia_1.jpg" alt="Participantes trabajando en equipo durante la práctica de laboratorio" loading="lazy"><figcaption>Trabajo colaborativo durante la práctica de laboratorio.</figcaption></figure>
+<figure class="foto-evidencia"><img src="evidencia_2.jpg" alt="Estudiante manipulando papel de filtro" loading="lazy"><figcaption>Preparación del material de filtración.</figcaption></figure>
+<figure class="foto-evidencia"><img src="evidencia_3.jpg" alt="Estudiante filtrando una mezcla en el laboratorio" loading="lazy"><figcaption>Proceso de filtración de la mezcla preparada.</figcaption></figure>
+<figure class="foto-evidencia"><img src="evidencia_4.jpg" alt="Mezcla en vaso de precipitación durante la práctica" loading="lazy"><figcaption>Manipulación y mezcla de materiales en el laboratorio.</figcaption></figure>
 </div>
-
+</div>
 </section>
 
 
@@ -1124,21 +1126,20 @@ footer strong {
 ========================= -->
 
 <section class="seccion" id="producto">
-
 <div class="contenido">
-
-    <h2>Producto</h2>
-
-    <p>
-
-        En esta sección se presentará el producto elaborado
-        como resultado del proyecto sobre el uso adecuado
-        del repelente para mosquitos.
-
-    </p>
-
+<h2>Producto</h2>
+<p>Como resultado del proyecto se elaboró y envasó el producto presentado con el nombre NAVI Biorepelente. A continuación se muestran fotografías del producto terminado.</p>
+<div class="galeria-producto" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:24px;margin-top:36px;">
+<figure style="margin:0;background:white;border-radius:14px;overflow:hidden;box-shadow:0 5px 20px rgba(0,0,0,.12);">
+<img src="producto_1.jpg" alt="Frascos NAVI Biorepelente con etiquetas" loading="lazy" style="width:100%;height:350px;object-fit:contain;display:block;background:#f3f3f3;">
+<figcaption style="padding:16px;color:#333;text-align:center;">Presentación final de NAVI Biorepelente.</figcaption>
+</figure>
+<figure style="margin:0;background:white;border-radius:14px;overflow:hidden;box-shadow:0 5px 20px rgba(0,0,0,.12);">
+<img src="producto_2.jpg" alt="Frascos atomizadores del producto envasado" loading="lazy" style="width:100%;height:350px;object-fit:contain;display:block;background:#f3f3f3;">
+<figcaption style="padding:16px;color:#333;text-align:center;">Frascos atomizadores con el producto envasado.</figcaption>
+</figure>
 </div>
-
+</div>
 </section>
 
 
@@ -1148,21 +1149,13 @@ footer strong {
 ========================= -->
 
 <section class="seccion" id="opinion">
-
 <div class="contenido">
-
-    <h2>Opinión</h2>
-
-    <p>
-
-        Este proyecto permite comprender la importancia de
-        prevenir las picaduras de mosquitos y utilizar
-        correctamente las diferentes medidas de protección.
-
-    </p>
-
+<h2>Opinión</h2>
+<p>Desde nuestra perspectiva, el proyecto NAVI Biorepelente fue una experiencia de aprendizaje significativa, ya que nos permitió relacionar lo estudiado en Ciencias Naturales con una situación presente en nuestra comunidad: las picaduras de mosquitos y la necesidad de prevenirlas. Más allá de obtener un producto envasado, el proceso nos ayudó a comprender la importancia de investigar, planificar cada actividad y asumir responsabilidades dentro de un equipo. Cada integrante pudo aportar ideas, colaborar con los materiales y participar en las tareas realizadas en el laboratorio.</p>
+<p style="margin-top:20px;">Uno de los aspectos que más valoramos fue la oportunidad de observar directamente las etapas de preparación, filtrado, envasado y presentación. Estas actividades nos hicieron reconocer que el trabajo científico requiere atención, orden, limpieza y registro de lo que se hace. También aprendimos que pueden surgir dificultades durante una práctica y que resolverlas exige paciencia, comunicación y disposición para escuchar las sugerencias de los demás.</p>
+<p style="margin-top:20px;">Consideramos que el proyecto despertó nuestra creatividad, especialmente al preparar la presentación de NAVI Biorepelente y organizar las evidencias fotográficas. Sin embargo, también nos dejó una reflexión importante: que un producto tenga ingredientes de origen vegetal o una presentación atractiva no significa automáticamente que sea seguro o que proteja eficazmente contra los mosquitos. Para hacer esas afirmaciones se necesitarían pruebas controladas, información sobre sus componentes y una evaluación de posibles riesgos, especialmente si se pretende aplicar sobre la piel.</p>
+<p style="margin-top:20px;">En general, esta experiencia fortaleció nuestro interés por la investigación escolar y nos permitió reconocer que la prevención de las enfermedades transmitidas por mosquitos exige información confiable y hábitos responsables. Nos sentimos satisfechos por el esfuerzo compartido y por haber transformado una idea en una actividad práctica, al mismo tiempo que comprendimos que todo proyecto científico puede mejorarse mediante nuevas preguntas, evaluaciones y aprendizajes.</p>
 </div>
-
 </section>
 
 
@@ -1172,23 +1165,16 @@ footer strong {
 ========================= -->
 
 <section class="seccion" id="conclusiones">
-
 <div class="contenido">
-
-    <h2>Conclusiones</h2>
-
-    <p>
-
-        El uso adecuado del repelente constituye una medida
-        de protección frente a las picaduras de mosquitos.
-        Esta práctica debe complementarse con medidas
-        ambientales destinadas a disminuir los lugares donde
-        los mosquitos pueden reproducirse.
-
-    </p>
-
+<h2>Conclusiones</h2>
+<p>La realización del proyecto NAVI Biorepelente permitió integrar conocimientos teóricos y actividades prácticas relacionadas con la prevención de las picaduras de mosquitos. A partir del trabajo realizado, destacamos las siguientes conclusiones:</p>
+<div class="tarjetas" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));">
+<div class="tarjeta"><h3>Aprendizaje y trabajo en equipo</h3><p>La preparación, el filtrado y el envasado del producto permitieron desarrollar habilidades de organización, observación y colaboración. La distribución de responsabilidades favoreció la participación de los integrantes y mostró que una actividad de laboratorio requiere planificación, cuidado con los materiales y comunicación constante.</p></div>
+<div class="tarjeta"><h3>Importancia de la prevención</h3><p>La investigación permitió comprender que prevenir las picaduras de mosquitos es una medida relevante para la salud. Esta protección no debe depender únicamente de un repelente: también incluye eliminar recipientes con agua acumulada, mantener limpios los espacios y seguir las recomendaciones de las autoridades sanitarias.</p></div>
+<div class="tarjeta"><h3>Evaluación científica y seguridad</h3><p>La elaboración de NAVI Biorepelente y las fotografías de su presentación demuestran el desarrollo de una actividad escolar, pero no comprueban que el producto repela mosquitos ni que sea seguro para la piel. Antes de recomendar su uso, sería necesario conocer la composición exacta, evaluar su estabilidad, posibles irritaciones y eficacia mediante métodos adecuados.</p></div>
 </div>
-
+<p style="margin-top:28px;">Como conclusión general, el proyecto cumplió una finalidad formativa al acercarnos al trabajo experimental y promover una reflexión responsable sobre la prevención. Aprendimos que una buena presentación es solo una parte del desarrollo de un producto y que las conclusiones científicas deben basarse en resultados comprobables. Esta experiencia nos motiva a continuar investigando y a mejorar futuras actividades con registros más detallados, criterios de seguridad y evaluaciones objetivas.</p>
+</div>
 </section>
 
 
@@ -1198,21 +1184,16 @@ footer strong {
 ========================= -->
 
 <section class="seccion" id="fuentes">
-
 <div class="contenido">
-
-    <h2>Fuentes</h2>
-
-    <p>
-
-        En esta sección se colocarán las referencias
-        bibliográficas, artículos científicos y páginas
-        institucionales utilizadas para desarrollar el proyecto.
-
-    </p>
-
+<h2>Fuentes</h2>
+<p>Para comprender la prevención de las picaduras de mosquitos y el uso responsable de repelentes se consultan las siguientes fuentes institucionales:</p>
+<div class="tarjetas" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));">
+<div class="tarjeta"><h3>Organización Mundial de la Salud (OMS)</h3><p>Información general sobre el dengue, su transmisión y las medidas de prevención.</p><p style="margin-top:12px;"><a href="https://www.who.int/es/news-room/fact-sheets/detail/dengue-and-severe-dengue" target="_blank" rel="noopener noreferrer">Dengue y dengue grave — OMS</a></p></div>
+<div class="tarjeta"><h3>Centros para el Control y la Prevención de Enfermedades (CDC)</h3><p>Recomendaciones para prevenir las picaduras de mosquitos y reducir la exposición.</p><p style="margin-top:12px;"><a href="https://www.cdc.gov/mosquitoes/prevention/index.html" target="_blank" rel="noopener noreferrer">Prevención de picaduras — CDC</a></p></div>
+<div class="tarjeta"><h3>Agencia de Protección Ambiental de EE. UU. (EPA)</h3><p>Orientación sobre repelentes registrados y selección de productos para uso personal.</p><p style="margin-top:12px;"><a href="https://www.epa.gov/insect-repellents" target="_blank" rel="noopener noreferrer">Repelentes de insectos — EPA</a></p></div>
 </div>
-
+<p style="margin-top:25px;font-size:16px;line-height:1.7;color:#555;">Estas referencias respaldan las recomendaciones generales de prevención; no constituyen una certificación ni una prueba de eficacia del producto escolar NAVI Biorepelente.</p>
+</div>
 </section>
 
 
